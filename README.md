@@ -12,9 +12,10 @@ Manual pre-setup steps:
 ```
 raspi-config
 ```
-    * Option 5 (connections to peripherals): P1 (Camera) Enable the Pi Camera
-    * Option 7 (Advanced Options): A3 (Memory Split): Set GPU memory to 256 MB
-    * Reboot
+Set the following options:
+  * Option 5 (Connections to peripherals): P1 (Camera) Enable the Pi Camera
+  * Option 7 (Advanced Options): A3 (Memory Split): Set GPU memory to 256 MB
+  * Reboot
 
 You're done with pre-setup steps.
 
