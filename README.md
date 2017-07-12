@@ -22,14 +22,14 @@ docker build -t openhorizon/cogwerx-mjpg-streamer-pi3 .
 ### To run:
 
 * You must run the container in "privileged" mode for docker to allow access to the Raspberry Pi 3 camera.
-* mjpg-streamer uses standard picam options (Vertical flip: -vf / Horizontal flip: -hf)
+* mjpg-streamer uses [standard picam options](https://www.raspberrypi.org/documentation/usage/camera/) (Vertical flip: -vf / Horizontal flip: -hf)
 
 ```
-docker run -it --rm --privileged -p 8080:8080 openhorizon/mjpg-streamer-pi3 ./mjpg_streamer -o "output_http.so -w ./www" -i "input_raspicam.so -x 640 -y 480 -fps 20 -ex night"
+docker run -it --rm --privileged -p 8080:8080 openhorizon/cogwerx-mjpg-streamer-pi3 ./mjpg_streamer -o "output_http.so -w ./www" -i "input_raspicam.so -x 640 -y 480 -fps 20 -ex night"
 
 ```
 
-Using a web browser, visit your Pi3's IP address followed by 8080 (e.g. http://192.168.0.193:8080) on your LAN.
+Using a web browser, visit your Pi3's IP address followed by 8080 (e.g. http://xxx.xxx.xxx.xxx:8080) on your LAN.
 That's it! You should be able to see a streaming video image from your Pi.
   
 
