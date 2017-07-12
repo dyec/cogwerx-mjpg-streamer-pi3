@@ -5,18 +5,34 @@ See PKOUT's [instructions](http://petrkout.com/electronics/low-latency-0-4-s-vid
 
 ### Initial setup:
 
+Manual pre-setup steps:
+* Download a raspbian image for your Pi (we tested this on a Pi3 using [Horizon's](https://bluehorizon.network/) raspbian image [download](https://bluehorizon.network/documentation/disclaimer)). Unzip and flash the image to your micro SD Card, (setup WiFi) and boot. Full setup instructions [here](https://bluehorizon.network/documentation/adding-your-device).
+* Run raspi-config as root and set GPU memory and enable the Pi Cam
 
-To pull a prebuilt image: 
+```
+raspi-config
+```
+    * Option 5 (connections to peripherals): P1 (Camera) Enable the Pi Camera
+    * Option 7 (Advanced Options): A3 (Memory Split): Set GPU memory to 256 MB
+    * Reboot
+
+You're done with pre-setup steps.
+
+#### To pull a prebuilt docker image: 
+You might want to get started immediately from an existing docker image. Pull the container image from docker hub:
+
 ```
 docker pull openhorizon/mjpg-streamer-pi3:latest
 ```
 
-(or) To build:
+#### (or) To build a docker image yourself:
+This took about 45 mins on a Pi3...
+
 
 ```
 git clone https://github.com/open-horizon/cogwerx-mjpg-streamer-pi3.git
 cd cogwerx-mjpg-streamer-pi3
-docker build -t openhorizon/cogwerx-mjpg-streamer-pi3 .
+docker build -t openhorizon/mjpg-streamer-pi3 .
 ```
 
 ### To run:
@@ -25,7 +41,7 @@ docker build -t openhorizon/cogwerx-mjpg-streamer-pi3 .
 * mjpg-streamer uses [standard picam options](https://www.raspberrypi.org/documentation/usage/camera/) (Vertical flip: -vf / Horizontal flip: -hf)
 
 ```
-docker run -it --rm --privileged -p 8080:8080 openhorizon/cogwerx-mjpg-streamer-pi3 ./mjpg_streamer -o "output_http.so -w ./www" -i "input_raspicam.so -x 640 -y 480 -fps 20 -ex night"
+docker run -it --rm --privileged -p 8080:8080 openhorizon/mjpg-streamer-pi3 ./mjpg_streamer -o "output_http.so -w ./www" -i "input_raspicam.so -x 640 -y 480 -fps 20 -ex night"
 
 ```
 
