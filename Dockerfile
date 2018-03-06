@@ -35,4 +35,4 @@ EXPOSE 8080
 #RUN ./mjpg_streamer -o "output_http.so -w ./www" -i "input_raspicam.so -x 640 -y 480 -fps 20 -ex night"
 
 ## Full docker container run command (vertically flipped):
-# docker run -it --rm --privileged -p 8080:8080 openhorizon/mjpeg-streamer-pi3 ./mjpg_streamer -o "output_http.so -w ./www" -i "input_raspicam.so -x 640 -y 480 -fps 20 -ex night -vf" 
+# docker run -it --rm --privileged -p 8080:8080 openhorizon/mjpg-streamer-pi3 ./mjpg_streamer -o "output_http.so -w ./www" -i "input_raspicam.so -x 640 -y 480 -fps 20 -ex night -vf" 
