@@ -5,9 +5,8 @@
 ## Start from resin.io's image    126MB
 FROM resin/rpi-raspbian
 
-RUN apt-get update && apt-get install -y git --no-install-recommends apt-utils vim
-# +76MB (git), +1MB (apt-utils) +26.4MB (vim)
-RUN apt-get install libv4l-dev libjpeg8-dev imagemagick build-essential cmake subversion
+RUN apt-get update && apt-get install -y --no-install-recommends apt-utils \
+ && apt-get install -y --no-install-recommends git libv4l-dev libjpeg8-dev imagemagick build-essential cmake subversion
 # +234 MB
 
 ## Set up mjpeg streamer, clone, and build
@@ -28,6 +27,9 @@ COPY ./cam-binaries/*.so /usr/src/mjpg-streamer/mjpg-streamer-experimental/
 
 # Expose port (will also be exposed explicitly during container run)
 EXPOSE 8080
+
+# For docker build --squash (saves 150+MB)
+RUN apt-get purge build-essential cmake perl apt-utils vim subversion && apt-get autoremove && apt-get clean && rm -rf /usr/share/locale
 
 ### To verify that it's working:
 ## Run this command upon container start, to stream on LAN on port 8080
