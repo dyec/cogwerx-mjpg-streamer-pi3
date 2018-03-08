@@ -22,7 +22,7 @@ Set the following options:
 
 You're done with pre-setup steps.
 
-### Automatic Deployment
+### Automatic Deployment on open-horizon
 This mjpg streamer container runs on [open-horizon](https://github.com/open-horizon/). Follow the [guide](guide-link) to set up an account in IBM Cloud Watson IoT Platform, and register your RPi3 on horizon to run this and other containers as Edge microservices. 
 
 &nbsp; &nbsp; <img src="https://user-images.githubusercontent.com/16260619/37162344-dd30136a-22a9-11e8-8a7a-804ec2a9a603.png" width="400" /> &nbsp; &nbsp; &nbsp; <img src="https://user-images.githubusercontent.com/16260619/37161742-5fefa75e-22a8-11e8-9213-dace6a8dbd97.png" width="320" />
