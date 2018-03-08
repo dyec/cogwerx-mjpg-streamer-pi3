@@ -34,7 +34,7 @@ The following steps show how to pull or build the docker image and run it manual
 It's a good idea to do this, just to test and ensure that your camera is set up properly.
 
 #### To pull a prebuilt docker image:  
-You might want to get started immediately from an existing docker image. Pull the container image from docker hub:  
+You might want to get started immediately from an existing docker image. Pull the container image from [Docker Hub](https://hub.docker.com/r/openhorizon/mjpg-streamer-pi3/):  
 ```
 docker pull openhorizon/mjpg-streamer-pi3:latest
 ```
