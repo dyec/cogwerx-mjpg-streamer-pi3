@@ -6,7 +6,7 @@ See PKOUT's [instructions](http://petrkout.com/electronics/low-latency-0-4-s-vid
 ### Initial setup:
 
 Manual pre-setup steps:
-* Download a raspbian image for your Pi (we tested this on a Pi3 using [Horizon's](https://bluehorizon.network/) raspbian image [download](https://bluehorizon.network/documentation/disclaimer)). Unzip and flash the image to your micro SD Card, (setup WiFi) and boot. Full setup instructions [here](https://bluehorizon.network/documentation/adding-your-device).
+* [Download](https://bluehorizon.network/documentation/disclaimer) a raspbian image for your Pi (we tested this on a Pi3 using [Horizon's](https://bluehorizon.network/) raspbian image). Unzip and flash the image to your micro SD Card, (setup WiFi) and boot. Full setup instructions [here](https://bluehorizon.network/documentation/adding-your-device).
 * Run raspi-config as root and set GPU memory and enable the Pi Cam
 
 ```
