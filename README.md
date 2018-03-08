@@ -17,18 +17,29 @@ Set the following options:
   * Option 7 (Advanced Options): A3 (Memory Split): Set GPU memory to 256 MB
   * Reboot
 
+<img src="https://user-images.githubusercontent.com/16260619/37161848-a253e6be-22a8-11e8-9e1b-73509ae8c4dd.png" width="480" />
+
+
 You're done with pre-setup steps.
 
-#### To pull a prebuilt docker image: 
-You might want to get started immediately from an existing docker image. Pull the container image from docker hub:
+### Automatic Deployment
+This mjpg streamer container runs on [open-horizon](https://github.com/open-horizon/). Follow the [guide](guide-link) to set up an account in IBM Cloud Watson IoT Platform, and register your RPi3 on horizon to run this and other containers as Edge microservices. 
 
+ <img src="https://user-images.githubusercontent.com/16260619/37161742-5fefa75e-22a8-11e8-9213-dace6a8dbd97.png" width="320" />
+
+
+
+### Manual Deployment  
+The following steps show how to pull or build the docker image and run it manually
+
+#### To pull a prebuilt docker image:  
+You might want to get started immediately from an existing docker image. Pull the container image from docker hub:  
 ```
 docker pull openhorizon/mjpg-streamer-pi3:latest
 ```
 
-#### (or) To build a docker image yourself:
-This took about 45 mins on a Pi3...
-
+#### (or) To build a docker image yourself:  
+This took about 45 mins on a Pi3...  
 
 ```
 git clone https://github.com/open-horizon/cogwerx-mjpg-streamer-pi3.git
@@ -36,17 +47,14 @@ cd cogwerx-mjpg-streamer-pi3
 docker build -t openhorizon/mjpg-streamer-pi3 .
 ```
 
-### To run:
-
+### To run:  
 * You must run the container in "privileged" mode for docker to allow access to the Raspberry Pi 3 camera.
 * mjpg-streamer uses [standard picam options](https://www.raspberrypi.org/documentation/usage/camera/) (Vertical flip: -vf / Horizontal flip: -hf)
 
 ```
 docker run -it --rm --privileged -p 8080:8080 openhorizon/mjpg-streamer-pi3 ./mjpg_streamer -o "output_http.so -w ./www" -i "input_raspicam.so -x 640 -y 480 -fps 20 -ex night"
-
-```
-
+```  
 Using a web browser, visit your Pi3's IP address followed by 8080 (e.g. http://xxx.xxx.xxx.xxx:8080) on your LAN.
 That's it! You should be able to see a simple web page with a static image from your Pi.  Connect to http://xxx.xxx.xxx.xxx:8080/?action=stream to see your video stream.
-  
 
+<img src="https://user-images.githubusercontent.com/16260619/37161339-3ccba3aa-22a7-11e8-8938-516ce59d5f2d.png" width="640" />
