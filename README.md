@@ -1,7 +1,7 @@
 ## Docker build for a base raspbian image with mjpg-streamer libraries for Raspberry Pi3
 
-This repo contains build files and instructions for a Docker image for Raspberry Pi3 (ARM), which will run jacksonliam's fork of mjpg-streamer. 
-See PKOUT's [instructions](http://petrkout.com/electronics/low-latency-0-4-s-video-streaming-from-raspberry-pi-mjpeg-streamer-opencv/) for MJPEG Streamer intro and manual build
+This repo contains build files and instructions for a Docker image for Raspberry Pi3 (ARM), which will run jacksonliam's [fork](https://github.com/jacksonliam/mjpg-streamer) of mjpg-streamer. 
+See Petr Kout's [instructions](http://petrkout.com/low-latency-0-4-s-video-streaming-from-raspberry-pi-mjpeg-streamer-opencv/) for MJPEG Streamer intro and manual build
 
 ### Initial setup:
 
